@@ -3,8 +3,8 @@
 
 //HOY
 let entries =[];
-const getEOD = async () => {
-    let request = await fetch('http://api.marketstack.com/v1/eod/latest?access_key=c969c0c0991c264a87b8f553ce393bdc&symbols=AAPL',
+const getTimeSeriesDaily = async () => {
+    let request = await fetch('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AAPL&outputsize=full&apikey=PDFYMPZQUJUZ7IV7',
     {
         method : "GET"
     });
@@ -12,12 +12,41 @@ const getEOD = async () => {
     {
     let datos = await request.json();
     console.log(datos);
+
+    console.log("----");
+
+     const tiempoTranscurrido = Date.now();
+        const dia_ms = 24*60*60*1000;
+        const tiempoTranscurridoHoy = tiempoTranscurrido - dia_ms;
+        const hoy = new Date(tiempoTranscurridoHoy);
+
+        let hoyStr ="";
+
+        if( (hoy.getMonth()+ 1) < 10)
+        {
+             hoyStr =hoy.getFullYear() + "-0"+(hoy.getMonth()+1)+"-"+hoy.getDate();
+            console.log(hoyStr);
+        }
+        else
+        {
+         hoyStr =hoy.getFullYear() + "-"+(hoy.getMonth()+1)+"-"+hoy.getDate();
+        console.log(hoyStr);
+        }
+
+        console.log(datos["Time Series (Daily)"][hoyStr]["1. open"]);
+        console.log(datos["Time Series (Daily)"][hoyStr]["2. high"]);
+        console.log(datos["Time Series (Daily)"][hoyStr]["3. low"]);
+        console.log(datos["Time Series (Daily)"][hoyStr]["4. close"]);
+
+
+    console.log("----");
+
     entries=datos;
 
-    addOpenToCard(entries.data[0].open, "open");
-    addHighToCard(entries.data[0].high, "high");
-    addLowToCard(entries.data[0].low, "low");
-    addCloseToCard(entries.data[0].close, "close");
+   addOpenToCard(datos["Time Series (Daily)"][hoyStr]["1. open"], "open");
+   addHighToCard(datos["Time Series (Daily)"][hoyStr]["2. high"], "high");
+   addLowToCard(datos["Time Series (Daily)"][hoyStr]["3. low"], "low");
+   addCloseToCard(datos["Time Series (Daily)"][hoyStr]["4. close"], "close");
 
     }};
 
@@ -30,15 +59,26 @@ const getEOD = async () => {
     //const ayerStr = ayer.toISOString();
 
 
+ let ayerStr ="";
 
-    const ayerStr =ayer.getFullYear() + "-"+(ayer.getMonth()+1)+"-"+ayer.getDate();
+        if( (ayer.getMonth()+ 1) < 10)
+        {
+             ayerStr =ayer.getFullYear() + "-0"+(ayer.getMonth()+1)+"-"+ayer.getDate();
+            console.log(hoyStr);
+        }
+        else
+        {
+         hoyStr =hoy.getFullYear() + "-"+(hoy.getMonth()+1)+"-"+hoy.getDate();
+        console.log(hoyStr);
+        }
+
 
 
     console.log(ayerStr);
-
+/*
    let entriesYesterday=[];
 
-    const getEODAyer = async () => {
+    const getTimeSeriesDailyAyer = async () => {
         let request = await fetch('http://api.marketstack.com/v1/eod/'+ayerStr+'T00:00:00+0000?access_key=c969c0c0991c264a87b8f553ce393bdc&symbols=AAPL',
         {
             method : "GET"
@@ -61,7 +101,7 @@ const getEOD = async () => {
 //MICROSOFT
 
    let entriesMicrosoft=[];
-    const getEODMicrosoft = async () => {
+    const getTimeSeriesDailyMicrosoft = async () => {
         let request = await fetch('http://api.marketstack.com/v1/eod/latest?access_key=c969c0c0991c264a87b8f553ce393bdc&symbols=MSFT',
         {
             method : "GET"
@@ -109,7 +149,7 @@ const getEOD = async () => {
 //SAMSUNG
 
    let entriesSamsung=[];
-    const getEODSamsung = async () => {
+    const getTimeSeriesDailySamsung = async () => {
         let request = await fetch('http://api.marketstack.com/v1/eod/latest?access_key=c969c0c0991c264a87b8f553ce393bdc&symbols=SSNLF',
         {
             method : "GET"
@@ -152,12 +192,12 @@ const getEOD = async () => {
 
         }};
 
-
+*/
         //XIAOMI
 
 /*
    let entriesXiaomi=[];
-    const getEODXiaomi = async () => {
+    const getTimeSeriesDailyXiaomi = async () => {
         let request = await fetch('http://api.marketstack.com/v1/eod/latest?access_key=c969c0c0991c264a87b8f553ce393bdc&symbols=XIACF',
         {
             method : "GET"
@@ -202,10 +242,10 @@ const getEOD = async () => {
 
 */
         //GOOGLE ALPHABET
-
+/*
 
            let entriesGoogle=[];
-            const getEODGoogle = async () => {
+            const getTimeSeriesDailyGoogle = async () => {
                 let request = await fetch('http://api.marketstack.com/v1/eod/latest?access_key=c969c0c0991c264a87b8f553ce393bdc&symbols=GOOG',
                 {
                     method : "GET"
@@ -248,6 +288,7 @@ const getEOD = async () => {
 
                 }};
 
+*/
 
     const addOpenToCard = (value, id) => {
         console.log(value);
@@ -264,6 +305,7 @@ const getEOD = async () => {
        */
 
     };
+
 
     const addHighToCard = (value, id) => {
             console.log(value);
@@ -316,16 +358,16 @@ const getEOD = async () => {
 
 
 
+/*
+getTimeSeriesDaily();
+getTimeSeriesDailyAyer();
+getTimeSeriesDailyMicrosoft();
+getTimeSeriesDailySamsung();
+//getTimeSeriesDailyXiaomi();
+getTimeSeriesDailyGoogle();
 
-getEOD();
-getEODAyer();
-getEODMicrosoft();
-getEODSamsung();
-//getEODXiaomi();
-getEODGoogle();
 
-
-
+*/
 let accederInstagram = () => {
     window.open("https://www.instagram.com/apple/","_blank");
 }
