@@ -53,13 +53,13 @@ p.noticias
 
 .featurette-heading
 {
- font: 35px Segoe UI, sans-serif;
+ font: 30px Segoe UI, sans-serif;
  font-weight: bolder;
 }
 
 .lead
 {
-    font: 30px Segoe UI, sans-serif !important;
+    font: 20px Segoe UI, sans-serif !important;
 }
 
 .btn-rrss
