@@ -4,7 +4,7 @@
 //HOY
 let entries =[];
 const getEOD = async () => {
-    let request = await fetch('http://api.marketstack.com/v1/eod/latest?access_key=73bf99300bafa82067df8c9874f9f885&symbols=AAPL',
+    let request = await fetch('http://api.marketstack.com/v1/eod/latest?access_key=c969c0c0991c264a87b8f553ce393bdc&symbols=AAPL',
     {
         method : "GET"
     });
@@ -39,7 +39,7 @@ const getEOD = async () => {
    let entriesYesterday=[];
 
     const getEODAyer = async () => {
-        let request = await fetch('http://api.marketstack.com/v1/eod/'+ayerStr+'T00:00:00+0000?access_key=73bf99300bafa82067df8c9874f9f885&symbols=AAPL',
+        let request = await fetch('http://api.marketstack.com/v1/eod/'+ayerStr+'T00:00:00+0000?access_key=c969c0c0991c264a87b8f553ce393bdc&symbols=AAPL',
         {
             method : "GET"
         });
@@ -62,7 +62,7 @@ const getEOD = async () => {
 
    let entriesMicrosoft=[];
     const getEODMicrosoft = async () => {
-        let request = await fetch('http://api.marketstack.com/v1/eod/latest?access_key=73bf99300bafa82067df8c9874f9f885&symbols=MSFT',
+        let request = await fetch('http://api.marketstack.com/v1/eod/latest?access_key=c969c0c0991c264a87b8f553ce393bdc&symbols=MSFT',
         {
             method : "GET"
         });
@@ -110,7 +110,7 @@ const getEOD = async () => {
 
    let entriesSamsung=[];
     const getEODSamsung = async () => {
-        let request = await fetch('http://api.marketstack.com/v1/eod/latest?access_key=73bf99300bafa82067df8c9874f9f885&symbols=SSNLF',
+        let request = await fetch('http://api.marketstack.com/v1/eod/latest?access_key=c969c0c0991c264a87b8f553ce393bdc&symbols=SSNLF',
         {
             method : "GET"
         });
@@ -158,7 +158,7 @@ const getEOD = async () => {
 
    let entriesXiaomi=[];
     const getEODXiaomi = async () => {
-        let request = await fetch('http://api.marketstack.com/v1/eod/latest?access_key=73bf99300bafa82067df8c9874f9f885&symbols=XIACF',
+        let request = await fetch('http://api.marketstack.com/v1/eod/latest?access_key=c969c0c0991c264a87b8f553ce393bdc&symbols=XIACF',
         {
             method : "GET"
         });
@@ -206,7 +206,7 @@ const getEOD = async () => {
 
            let entriesGoogle=[];
             const getEODGoogle = async () => {
-                let request = await fetch('http://api.marketstack.com/v1/eod/latest?access_key=73bf99300bafa82067df8c9874f9f885&symbols=GOOG',
+                let request = await fetch('http://api.marketstack.com/v1/eod/latest?access_key=c969c0c0991c264a87b8f553ce393bdc&symbols=GOOG',
                 {
                     method : "GET"
                 });
