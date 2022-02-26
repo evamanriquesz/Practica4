@@ -74,6 +74,7 @@ const getTimeSeriesDaily = async () => {
 
 
 
+
     console.log(ayerStr);
 /*
    let entriesYesterday=[];
