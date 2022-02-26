@@ -64,12 +64,12 @@ const getTimeSeriesDaily = async () => {
         if( (ayer.getMonth()+ 1) < 10)
         {
              ayerStr =ayer.getFullYear() + "-0"+(ayer.getMonth()+1)+"-"+ayer.getDate();
-            console.log(hoyStr);
+            console.log(ayerStr);
         }
         else
         {
-         hoyStr =hoy.getFullYear() + "-"+(hoy.getMonth()+1)+"-"+hoy.getDate();
-        console.log(hoyStr);
+         ayerStr =ayer.getFullYear() + "-"+(ayer.getMonth()+1)+"-"+ayer.getDate();
+        console.log(ayerStr);
         }
 
 
