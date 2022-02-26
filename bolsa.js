@@ -155,7 +155,7 @@ const getEOD = async () => {
 
         //XIAOMI
 
-
+/*
    let entriesXiaomi=[];
     const getEODXiaomi = async () => {
         let request = await fetch('http://api.marketstack.com/v1/eod/latest?access_key=c969c0c0991c264a87b8f553ce393bdc&symbols=XIACF',
@@ -200,7 +200,7 @@ const getEOD = async () => {
 
         }};
 
-
+*/
         //GOOGLE ALPHABET
 
 
@@ -321,7 +321,7 @@ getEOD();
 getEODAyer();
 getEODMicrosoft();
 getEODSamsung();
-getEODXiaomi();
+//getEODXiaomi();
 getEODGoogle();
 
 
