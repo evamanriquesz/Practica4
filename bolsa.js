@@ -51,9 +51,9 @@ const getTimeSeriesDaily = async () => {
 
         //AYER
 
-        const tiempoTranscurrido = Date.now();
-        const dia_ms = 2*24*60*60*1000;
-        const tiempoTranscurridoAyer = tiempoTranscurrido - dia_ms;
+        const tiempoTranscurrido2 = Date.now();
+        const dia_ms2 = 2*24*60*60*1000;
+        const tiempoTranscurridoAyer = tiempoTranscurrido2 - dia_ms2;
         const ayer = new Date(tiempoTranscurridoAyer);
         //const ayerStr = ayer.toISOString();
 
