@@ -1,0 +1,52 @@
+.navbar navbar-expand-sm bg-success
+{
+    color: rgb(255,255,255);
+}
+li.nav-item
+{
+    font: 30px Segoe UI, sans-serif;
+
+}
+
+ul.navbar-nav
+{
+    align:center;
+}
+img.card-img-top
+{
+    width: 100%;
+    height: 30vh;
+}
+
+body
+{
+    background-color : rgb(255,0,0);
+}
+
+
+.btn-rrss
+{
+    border-style: none;
+
+}
+
+.btn-ir-arriba {
+	display:none;
+	padding:20px;
+	cursor:pointer;
+	position: fixed;
+	bottom:20px;
+	right:20px;
+	border-style: none;
+
+}
+
+img.producto
+{
+    height:80vh;
+}
+
+.lead
+{
+    font: 30px Segoe UI, sans-serif!important;
+}

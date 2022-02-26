@@ -1,0 +1,56 @@
+.navbar navbar-expand-sm bg-success
+{
+    color: rgb(255,255,255);
+}
+li.nav-item
+{
+    font: 30px Segoe UI, sans-serif;
+
+}
+
+ul.navbar-nav
+{
+    align:center;
+}
+h1.display-3
+{
+    font: px Segoe UI, sans-serif;
+}
+
+h3.subtitulo
+{
+   font: 35px Segoe UI, sans-serif;
+}
+
+p.intro
+{
+        font: 25px Segoe UI, sans-serif;
+}
+
+.modal-title
+{
+ font: 35px Segoe UI, sans-serif;
+}
+
+p.body
+{
+        font: 25px Segoe UI, sans-serif;
+}
+
+
+.btn-rrss
+{
+    border-style: none;
+
+}
+
+.btn-ir-arriba {
+	display:none;
+	padding:20px;
+	cursor:pointer;
+	position: fixed;
+	bottom:20px;
+	right:20px;
+	border-style: none;
+
+}
