@@ -2,7 +2,7 @@
 
 
 //HOY
-let entries =[];
+
 const getTimeSeriesDaily = async () => {
     let request = await fetch('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AAPL&outputsize=full&apikey=PDFYMPZQUJUZ7IV7',
     {
@@ -41,7 +41,7 @@ const getTimeSeriesDaily = async () => {
 
     console.log("----");
 
-    entries=datos;
+
 
    addOpenToCard(datos["Time Series (Daily)"][hoyStr]["1. open"], "open");
    addHighToCard(datos["Time Series (Daily)"][hoyStr]["2. high"], "high");
@@ -80,57 +80,10 @@ const getTimeSeriesDaily = async () => {
 
     }};
 
-    //AYER
-/*
-    const tiempoTranscurrido = Date.now();
-    const dia_ms = 2*24*60*60*1000;
-    const tiempoTranscurridoAyer = tiempoTranscurrido - dia_ms;
-    const ayer = new Date(tiempoTranscurridoAyer);
-    //const ayerStr = ayer.toISOString();
 
-
- let ayerStr ="";
-
-        if( (ayer.getMonth()+ 1) < 10)
-        {
-             ayerStr =ayer.getFullYear() + "-0"+(ayer.getMonth()+1)+"-"+ayer.getDate();
-            console.log(ayerStr);
-        }
-        else
-        {
-         ayerStr =ayer.getFullYear() + "-"+(ayer.getMonth()+1)+"-"+ayer.getDate();
-        console.log(ayerStr);
-        }
-
-
-
-    console.log(ayerStr);
-
-   let entriesYesterday=[];
-
-    const getTimeSeriesDailyAyer = async () => {
-        let request = await fetch('http://api.marketstack.com/v1/eod/'+ayerStr+'T00:00:00+0000?access_key=c969c0c0991c264a87b8f553ce393bdc&symbols=AAPL',
-        {
-            method : "GET"
-        });
-        if(request.status===200)
-        {
-
-        let datosYesterday = await request.json();
-
-        console.log(datosYesterday);
-        entriesYesterday=datosYesterday;
-
-        addOpenToCard(entriesYesterday.data[0].open, "openYesterday");
-        addHighToCard(entriesYesterday.data[0].high, "highYesterday");
-        addLowToCard(entriesYesterday.data[0].low, "lowYesterday");
-        addCloseToCard(entriesYesterday.data[0].close, "closeYesterday");
-
-        }};
-*/
 //MICROSOFT
 
-   let entriesMicrosoft=[];
+
     const getTimeSeriesDailyMicrosoft = async () => {
         let request = await fetch('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&outputsize=full&apikey=PDFYMPZQUJUZ7IV7',
         {
@@ -141,7 +94,7 @@ const getTimeSeriesDaily = async () => {
 
         let datosMicrosoft = await request.json();
         console.log(datosMicrosoft);
-        entriesMicrosoft=datosMicrosoft;
+
 
 
      const tiempoTranscurrido = Date.now();
@@ -169,28 +122,28 @@ const getTimeSeriesDaily = async () => {
         microsoft_open_p.appendChild(microsoft_open_text);
         microsoft_box.appendChild(microsoft_open_p);
 
-        addOpenToCard(datos["Time Series (Daily)"][hoyStr]["1. open"], "MicrosoftBody");
+        addOpenToCard(datosMicrosoft["Time Series (Daily)"][hoyStr]["1. open"], "MicrosoftBody");
 
         const microsoft_high_p = document.createElement("p");
         const microsoft_high_text = document.createTextNode("High");
         microsoft_high_p.appendChild(microsoft_high_text);
         microsoft_box.appendChild(microsoft_high_p);
 
-        addHighToCard(datos["Time Series (Daily)"][hoyStr]["2. high"], "MicrosoftBody");
+        addHighToCard(datosMicrosoft["Time Series (Daily)"][hoyStr]["2. high"], "MicrosoftBody");
 
         const microsoft_low_p = document.createElement("p");
         const microsoft_low_text = document.createTextNode("Low");
         microsoft_low_p.appendChild(microsoft_low_text);
         microsoft_box.appendChild(microsoft_low_p);
 
-        addLowToCard(datos["Time Series (Daily)"][hoyStr]["3. low"], "MicrosoftBody");
+        addLowToCard(datosMicrosoft["Time Series (Daily)"][hoyStr]["3. low"], "MicrosoftBody");
 
         const microsoft_close_p = document.createElement("p");
         const microsoft_close_text = document.createTextNode("Close");
         microsoft_close_p.appendChild(microsoft_close_text);
         microsoft_box.appendChild(microsoft_close_p);
 
-        addCloseToCard(datos["Time Series (Daily)"][hoyStr]["4. close"], "MicrosoftBody");
+        addCloseToCard(datosMicrosoft["Time Series (Daily)"][hoyStr]["4. close"], "MicrosoftBody");
 
         }};
 
@@ -198,7 +151,6 @@ const getTimeSeriesDaily = async () => {
 
 //SAMSUNG
 
-   let entriesSamsung=[];
     const getTimeSeriesDailySamsung = async () => {
         let request = await fetch('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=SSNLF&outputsize=full&apikey=PDFYMPZQUJUZ7IV7',
         {
@@ -209,7 +161,7 @@ const getTimeSeriesDaily = async () => {
 
         let datosSamsung = await request.json();
         console.log(datosSamsung);
-        entriesSamsung=datosSamsung;
+
 
 
      const tiempoTranscurrido = Date.now();
@@ -237,28 +189,28 @@ const getTimeSeriesDaily = async () => {
         samsung_open_p.appendChild(samsung_open_text);
         samsung_box.appendChild(samsung_open_p);
 
-        addOpenToCard(datos["Time Series (Daily)"][hoyStr]["1. open"], "SamsungBody");
+        addOpenToCard(datosSamsung["Time Series (Daily)"][hoyStr]["1. open"], "SamsungBody");
 
         const samsung_high_p = document.createElement("p");
         const samsung_high_text = document.createTextNode("High");
         samsung_high_p.appendChild(samsung_high_text);
         samsung_box.appendChild(samsung_high_p);
 
-        addHighToCard(datos["Time Series (Daily)"][hoyStr]["2. high"], "SamsungBody");
+        addHighToCard(datosSamsung["Time Series (Daily)"][hoyStr]["2. high"], "SamsungBody");
 
         const samsung_low_p = document.createElement("p");
         const samsung_low_text = document.createTextNode("Low");
         samsung_low_p.appendChild(samsung_low_text);
         samsung_box.appendChild(samsung_low_p);
 
-        addLowToCard(datos["Time Series (Daily)"][hoyStr]["3. low"], "SamsungBody");
+        addLowToCard(datosSamsung["Time Series (Daily)"][hoyStr]["3. low"], "SamsungBody");
 
         const samsung_close_p = document.createElement("p");
         const samsung_close_text = document.createTextNode("Close");
         samsung_close_p.appendChild(samsung_close_text);
         samsung_box.appendChild(samsung_close_p);
 
-        addCloseToCard(datos["Time Series (Daily)"][hoyStr]["4. close"], "SamsungBody");
+        addCloseToCard(datosSamsung["Time Series (Daily)"][hoyStr]["4. close"], "SamsungBody");
 
         }};
 
@@ -266,7 +218,6 @@ const getTimeSeriesDaily = async () => {
         //XIAOMI
 
 
-   let entriesXiaomi=[];
     const getTimeSeriesDailyXiaomi = async () => {
         let request = await fetch('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=XIACF&outputsize=full&apikey=PDFYMPZQUJUZ7IV7',
         {
@@ -277,7 +228,6 @@ const getTimeSeriesDaily = async () => {
 
         let datosXiaomi = await request.json();
         console.log(datosXiaomi);
-        entriesXiaomi=datosXiaomi;
 
 
 
@@ -305,35 +255,35 @@ const getTimeSeriesDaily = async () => {
         xiaomi_open_p.appendChild(xiaomi_open_text);
         xiaomi_box.appendChild(xiaomi_open_p);
 
-        addOpenToCard(datos["Time Series (Daily)"][hoyStr]["1. open"], "XiaomiBody");
+        addOpenToCard(datosXiaomi["Time Series (Daily)"][hoyStr]["1. open"], "XiaomiBody");
 
         const xiaomi_high_p = document.createElement("p");
         const xiaomi_high_text = document.createTextNode("High");
         xiaomi_high_p.appendChild(xiaomi_high_text);
         xiaomi_box.appendChild(xiaomi_high_p);
 
-        addHighToCard(datos["Time Series (Daily)"][hoyStr]["2. high"], "XiaomiBody");
+        addHighToCard(datosXiaomi["Time Series (Daily)"][hoyStr]["2. high"], "XiaomiBody");
 
         const xiaomi_low_p = document.createElement("p");
         const xiaomi_low_text = document.createTextNode("Low");
         xiaomi_low_p.appendChild(xiaomi_low_text);
         xiaomi_box.appendChild(xiaomi_low_p);
 
-        addLowToCard(datos["Time Series (Daily)"][hoyStr]["3. low"], "XiaomiBody");
+        addLowToCard(datosXiaomi["Time Series (Daily)"][hoyStr]["3. low"], "XiaomiBody");
 
         const xiaomi_close_p = document.createElement("p");
         const xiaomi_close_text = document.createTextNode("Close");
         xiaomi_close_p.appendChild(xiaomi_close_text);
         xiaomi_box.appendChild(xiaomi_close_p);
 
-        addCloseToCard(datos["Time Series (Daily)"][hoyStr]["4. close"], "XiaomiBody");
+        addCloseToCard(datosXiaomi["Time Series (Daily)"][hoyStr]["4. close"], "XiaomiBody");
 
         }};
 
 
         //GOOGLE ALPHABET
 
-           let entriesGoogle=[];
+
             const getTimeSeriesDailyGoogle = async () => {
                 let request = await fetch('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=GOOG&outputsize=full&apikey=PDFYMPZQUJUZ7IV7',
                 {
@@ -344,7 +294,7 @@ const getTimeSeriesDaily = async () => {
 
                 let datosGoogle = await request.json();
                 console.log(datosGoogle);
-                entriesGoogle=datosGoogle;
+
 
 
 
@@ -372,28 +322,28 @@ const getTimeSeriesDaily = async () => {
                 google_open_p.appendChild(google_open_text);
                 google_box.appendChild(google_open_p);
 
-                addOpenToCard(datos["Time Series (Daily)"][hoyStr]["1. open"], "GoogleBody");
+                addOpenToCard(datosGoogle["Time Series (Daily)"][hoyStr]["1. open"], "GoogleBody");
 
                 const google_high_p = document.createElement("p");
                 const google_high_text = document.createTextNode("High");
                 google_high_p.appendChild(google_high_text);
                 google_box.appendChild(google_high_p);
 
-                addHighToCard(datos["Time Series (Daily)"][hoyStr]["2. high"], "GoogleBody");
+                addHighToCard(datosGoogle["Time Series (Daily)"][hoyStr]["2. high"], "GoogleBody");
 
                 const google_low_p = document.createElement("p");
                 const google_low_text = document.createTextNode("Low");
                 google_low_p.appendChild(google_low_text);
                 google_box.appendChild(google_low_p);
 
-                addLowToCard(datos["Time Series (Daily)"][hoyStr]["3. low"], "GoogleBody");
+                addLowToCard(datosGoogle["Time Series (Daily)"][hoyStr]["3. low"], "GoogleBody");
 
                 const google_close_p = document.createElement("p");
                 const google_close_text = document.createTextNode("Close");
                 google_close_p.appendChild(google_close_text);
                 google_box.appendChild(google_close_p);
 
-                addCloseToCard(datos["Time Series (Daily)"][hoyStr]["4. close"], "GoogleBody");
+                addCloseToCard(datosGoogle["Time Series (Daily)"][hoyStr]["4. close"], "GoogleBody");
 
                 }};
 
@@ -467,16 +417,14 @@ const getTimeSeriesDaily = async () => {
 
 
 
-/*
+
 getTimeSeriesDaily();
-getTimeSeriesDailyAyer();
 getTimeSeriesDailyMicrosoft();
 getTimeSeriesDailySamsung();
-//getTimeSeriesDailyXiaomi();
+getTimeSeriesDailyXiaomi();
 getTimeSeriesDailyGoogle();
 
 
-*/
 let accederInstagram = () => {
     window.open("https://www.instagram.com/apple/","_blank");
 }
