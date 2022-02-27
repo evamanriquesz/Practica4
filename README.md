@@ -44,7 +44,8 @@ No obstante, he dejado comentado el código que en una primera instancia utilic�
 convencional y el de JQuery, consiguien el mismo resultado. 
 
 Para añadir más funcionalidad a la aplicación, he añadido también los datos de la bolsa de valores de Apple del día anterior
-al actual. Para ello, he usado y manipulado la función Date de Javascript.
+al actual. Para ello, he creado un vector con las fechas que me devuelve el JSON, para poder iterar sobre él, y poder escoger
+los datos de los dos últimos días. 
 
 Por último, en la página de la Bolsa he querido mostrar los resultados de algunos competidores de Apple, como son Microsoft, 
 Samsung, Xiaomi, o Alphabet (la filial de Google). Para ello, he modificado la url para el fetch, cambiando el parametro simbols. 

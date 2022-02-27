@@ -1,6 +1,3 @@
-
-
-
 //HOY
 
 const getTimeSeriesDaily = async () => {
@@ -11,35 +8,16 @@ const getTimeSeriesDaily = async () => {
     if(request.status===200)
     {
     let datos = await request.json();
-    console.log(datos);
 
-    console.log("----");
+    let fechas = datos["Time Series (Daily)"];
+    let fechas_aux = Object.keys(fechas);
+    let array_dos_fechas = fechas_aux.slice(0,2);
 
-     const tiempoTranscurrido = Date.now();
-        const dia_ms = 24*60*60*1000;
-        const tiempoTranscurridoHoy = tiempoTranscurrido - dia_ms;
-        const hoy = new Date(tiempoTranscurridoHoy);
+    let hoyStr = array_dos_fechas[0];
+    let ayerStr = array_dos_fechas[1];
 
-        let hoyStr ="";
-
-        if( (hoy.getMonth()+ 1) < 10)
-        {
-             hoyStr =hoy.getFullYear() + "-0"+(hoy.getMonth()+1)+"-"+hoy.getDate();
-            console.log(hoyStr);
-        }
-        else
-        {
-         hoyStr =hoy.getFullYear() + "-"+(hoy.getMonth()+1)+"-"+hoy.getDate();
-        console.log(hoyStr);
-        }
-
-        console.log(datos["Time Series (Daily)"][hoyStr]["1. open"]);
-        console.log(datos["Time Series (Daily)"][hoyStr]["2. high"]);
-        console.log(datos["Time Series (Daily)"][hoyStr]["3. low"]);
-        console.log(datos["Time Series (Daily)"][hoyStr]["4. close"]);
-
-
-    console.log("----");
+    console.log(hoyStr);
+    console.log(ayerStr);
 
 
 
@@ -49,29 +27,10 @@ const getTimeSeriesDaily = async () => {
    addCloseToCard(datos["Time Series (Daily)"][hoyStr]["4. close"], "close");
 
 
+
         //AYER
 
-        const tiempoTranscurrido2 = Date.now();
-        const dia_ms2 = 2*24*60*60*1000;
-        const tiempoTranscurridoAyer = tiempoTranscurrido2 - dia_ms2;
-        const ayer = new Date(tiempoTranscurridoAyer);
-        //const ayerStr = ayer.toISOString();
 
-
-     let ayerStr ="";
-
-            if( (ayer.getMonth()+ 1) < 10)
-            {
-                 ayerStr =ayer.getFullYear() + "-0"+(ayer.getMonth()+1)+"-"+ayer.getDate();
-                console.log(ayerStr);
-            }
-            else
-            {
-             ayerStr =ayer.getFullYear() + "-"+(ayer.getMonth()+1)+"-"+ayer.getDate();
-            console.log(ayerStr);
-            }
-
-        console.log(ayerStr);
 
             addOpenToCard(datos["Time Series (Daily)"][ayerStr]["1. open"], "openYesterday");
                 addHighToCard(datos["Time Series (Daily)"][ayerStr]["2. high"], "highYesterday");
@@ -79,6 +38,7 @@ const getTimeSeriesDaily = async () => {
                 addCloseToCard(datos["Time Series (Daily)"][ayerStr]["4. close"], "closeYesterday");
 
     }};
+
 
 
 //MICROSOFT
@@ -97,23 +57,14 @@ const getTimeSeriesDaily = async () => {
 
 
 
-     const tiempoTranscurrido = Date.now();
-        const dia_ms = 24*60*60*1000;
-        const tiempoTranscurridoHoy = tiempoTranscurrido - dia_ms;
-        const hoy = new Date(tiempoTranscurridoHoy);
+     let fechas = datosMicrosoft["Time Series (Daily)"];
+         let fechas_aux = Object.keys(fechas);
+         let array_dos_fechas = fechas_aux.slice(0,2);
 
-        let hoyStr ="";
+         let hoyStr = array_dos_fechas[0];
 
-        if( (hoy.getMonth()+ 1) < 10)
-        {
-             hoyStr =hoy.getFullYear() + "-0"+(hoy.getMonth()+1)+"-"+hoy.getDate();
-            console.log(hoyStr);
-        }
-        else
-        {
-         hoyStr =hoy.getFullYear() + "-"+(hoy.getMonth()+1)+"-"+hoy.getDate();
-        console.log(hoyStr);
-        }
+
+
 
 
         const microsoft_box = document.getElementById("MicrosoftBody");
@@ -164,23 +115,12 @@ const getTimeSeriesDaily = async () => {
 
 
 
-     const tiempoTranscurrido = Date.now();
-        const dia_ms = 24*60*60*1000;
-        const tiempoTranscurridoHoy = tiempoTranscurrido - dia_ms;
-        const hoy = new Date(tiempoTranscurridoHoy);
+   let fechas = datosSamsung["Time Series (Daily)"];
+            let fechas_aux = Object.keys(fechas);
+            let array_dos_fechas = fechas_aux.slice(0,2);
 
-        let hoyStr ="";
+            let hoyStr = array_dos_fechas[0];
 
-        if( (hoy.getMonth()+ 1) < 10)
-        {
-             hoyStr =hoy.getFullYear() + "-0"+(hoy.getMonth()+1)+"-"+hoy.getDate();
-            console.log(hoyStr);
-        }
-        else
-        {
-         hoyStr =hoy.getFullYear() + "-"+(hoy.getMonth()+1)+"-"+hoy.getDate();
-        console.log(hoyStr);
-        }
 
 
         const samsung_box = document.getElementById("SamsungBody");
@@ -231,23 +171,12 @@ const getTimeSeriesDaily = async () => {
 
 
 
-     const tiempoTranscurrido = Date.now();
-        const dia_ms = 24*60*60*1000;
-        const tiempoTranscurridoHoy = tiempoTranscurrido - dia_ms;
-        const hoy = new Date(tiempoTranscurridoHoy);
+     let fechas = datosXiaomi["Time Series (Daily)"];
+              let fechas_aux = Object.keys(fechas);
+              let array_dos_fechas = fechas_aux.slice(0,2);
 
-        let hoyStr ="";
+              let hoyStr = array_dos_fechas[0];
 
-        if( (hoy.getMonth()+ 1) < 10)
-        {
-             hoyStr =hoy.getFullYear() + "-0"+(hoy.getMonth()+1)+"-"+hoy.getDate();
-            console.log(hoyStr);
-        }
-        else
-        {
-         hoyStr =hoy.getFullYear() + "-"+(hoy.getMonth()+1)+"-"+hoy.getDate();
-        console.log(hoyStr);
-        }
 
         const xiaomi_box = document.getElementById("XiaomiBody");
         const xiaomi_open_p = document.createElement("p");
@@ -293,28 +222,18 @@ const getTimeSeriesDaily = async () => {
                 {
 
                 let datosGoogle = await request.json();
+
                 console.log(datosGoogle);
 
 
 
 
-     const tiempoTranscurrido = Date.now();
-        const dia_ms = 24*60*60*1000;
-        const tiempoTranscurridoHoy = tiempoTranscurrido - dia_ms;
-        const hoy = new Date(tiempoTranscurridoHoy);
+             let fechas = datosGoogle["Time Series (Daily)"];
+             let fechas_aux = Object.keys(fechas);
+             let array_dos_fechas = fechas_aux.slice(0,2);
 
-        let hoyStr ="";
+             let hoyStr = array_dos_fechas[0];
 
-        if( (hoy.getMonth()+ 1) < 10)
-        {
-             hoyStr =hoy.getFullYear() + "-0"+(hoy.getMonth()+1)+"-"+hoy.getDate();
-            console.log(hoyStr);
-        }
-        else
-        {
-         hoyStr =hoy.getFullYear() + "-"+(hoy.getMonth()+1)+"-"+hoy.getDate();
-        console.log(hoyStr);
-        }
 
                 const google_box = document.getElementById("GoogleBody");
                 const google_open_p = document.createElement("p");
