@@ -28,15 +28,15 @@ En la página Iniciativas Sostenibles, se recogen tres de las iniciativas de App
 un objeto modal que nos explica en qué consisten. Además, tanto en la introducción como encima de cada foto, encontramos títulos
 y párrafos. 
 
-En la página Bolsa, es donde encontramos la información que hemos obtenido de la API. La API que he utilizado es Marketstack API.
+En la página Bolsa, es donde encontramos la información que hemos obtenido de la API. La API que he utilizado es Alpha Vantage API.
 Esta API te devuelve en formato JSON información sobre cualquiera de las empresas que desees. Para indicar sobre qué empresa 
 se requiere la información, se añadirá en el fetch un parámetro de la url (simbols), en el que hay que introducir el ticker 
-de la empresa (APPL en mi caso). 
+de la empresa (APPL en mi caso). También hay que proporcionar una API key en la url para poder acceder a los datos. 
 
 En primer lugar, he obtenido el valor de apertura, el valor más alto, el más bajo, y el valor de cierre para la última jornada 
 disponible (indicándolo en la url con un parámetro: latest). He mostrado la información que me devolvía en Cards. Estas Cards
 tienen su header, y debajo, un contenedor para la información. Para extraer la información de la API, en primer lugar he 
-creado una función asíncrona (getEOD), la cual introduce en array la información obtenida en formato JSON. A continuación, 
+creado una función asíncrona (getTimeSeriesDaily), la cual introduce devuelve información en formato JSON. A continuación, 
 he creado 4 funciones (addOpenToCard, addHighToCard, addLowToCard, addCloseToCard) para colocar la información en las Cards 
 donde les corresponde. Para el código de estas funciones, he probado a hacerlo de la manera clásica, accediendo al DOM, tal 
 y como aprendimos en clase, pero he investigado sobre JQuery, y finalmente he optado por usarlo ya que me ha parecido más sencillo. 
@@ -44,8 +44,7 @@ No obstante, he dejado comentado el código que en una primera instancia utilic�
 convencional y el de JQuery, consiguien el mismo resultado. 
 
 Para añadir más funcionalidad a la aplicación, he añadido también los datos de la bolsa de valores de Apple del día anterior
-al actual. Para ello, he usado y manipulado la función Date de Javascript. El proceso de muestra de los valores en la web es 
-similar, salvo por el hecho de que en la url para el fetch hay que introducir el parámetro de la fecha. 
+al actual. Para ello, he usado y manipulado la función Date de Javascript.
 
 Por último, en la página de la Bolsa he querido mostrar los resultados de algunos competidores de Apple, como son Microsoft, 
 Samsung, Xiaomi, o Alphabet (la filial de Google). Para ello, he modificado la url para el fetch, cambiando el parametro simbols. 
